@@ -44,13 +44,13 @@ Asegúrate de documentar tu configuración y cualquier instrucción especial par
 ### Enlaces
 
 - URL en GITHUB de tu proyecto: https://github.com/fergood-2703/formulario-php
-- URL del site:[Agrega la URL del sitio en vivo aquí](https://your-live-site-url.com)
+- URL del site:[URL del sitio en vivo](https://form-diagnostico-fernando.infinityfree.me/)
 
 ## Autor
 - Nombre completo: Omar Fernando Puc Ek
 - N° Control: 211K0070
 - Grupo: A
-- Sitio  - [Omar Fernando Puc Ek](https://www.linkedin.com/in/fernando-puc-ek-061154226/)
+- Sitio  - [Omar Fernando Puc Ek - Linkedin](https://www.linkedin.com/in/fernando-puc-ek-061154226/)
 - Github - [@fergood-2703](https://github.com/fergood-2703)
 
 
