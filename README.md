@@ -49,7 +49,7 @@ Asegúrate de documentar tu configuración y cualquier instrucción especial par
 ## Autor
 - Nombre completo: Omar Fernando Puc Ek
 - N° Control: 211K0070
-- Grupo
+- Grupo: A
 - Sitio  - [Omar Fernando Puc Ek](https://www.linkedin.com/in/fernando-puc-ek-061154226/)
 - Github - [@fergood-2703](https://github.com/fergood-2703)
 
