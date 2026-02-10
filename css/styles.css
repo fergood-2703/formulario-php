@@ -1,0 +1,336 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+  /* Colores Primarios */
+  --color-green-lighter: hsl(148, 38%, 91%);
+  --color-green-medium: hsl(169, 82%, 27%); /* Color principal del botón */
+  --color-red: hsl(0, 66%, 54%); /* Errores */
+
+  /* Colores Neutros */
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-500: hsl(186, 15%, 59%);
+  --color-grey-900: hsl(187, 24%, 22%); /* Texto oscuro */
+
+  /* Fuentes */
+  --font-family: 'Karla', sans-serif;
+  --font-size-base: 16px;
+}
+
+/* Carga de la fuente local  */
+@font-face {
+  font-family: 'Karla';
+  src: url('../assets/fonts/Karla-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--color-green-lighter);
+  color: var(--color-grey-900);
+  
+  /* Configuración Flexbox para centrar */
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* =========================================
+   2. TARJETA DEL FORMULARIO
+   ========================================= */
+.contact-card {
+  background-color: var(--color-white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  color: var(--color-grey-900);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* =========================================
+   3. ELEMENTOS DEL FORMULARIO
+   ========================================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-grey-900);
+  font-weight: 400; /* Regular */
+}
+
+/* El asterisco (*) */
+label::after {
+  content: " *";
+  color: var(--color-green-medium);
+}
+
+/* Inputs y Textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-grey-500);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-green-medium);
+  box-shadow: 0 0 0 1px var(--color-green-medium);
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--color-green-medium);
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+}
+
+/* =========================================
+   4. RADIO BUTTONS (Cajas de selección)
+   ========================================= */
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-grey-500);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  width: 50%; /* Ocupan la mitad cada uno */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 0.8rem;
+  accent-color: var(--color-green-medium); /* Pinta el puntito de verde */
+  transform: scale(1.2);
+}
+
+.radio-option label {
+  margin-bottom: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Estilo cuando está activo (se requiere JS o :has en navegadores modernos) */
+.radio-option:hover {
+  border-color: var(--color-green-medium);
+}
+
+/* =========================================
+   5. CHECKBOX
+   ========================================= */
+.checkbox-group {
+  margin-top: 1rem;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  accent-color: var(--color-green-medium);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.checkbox-wrapper label {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* =========================================
+   6. BOTÓN DE ENVÍO
+   ========================================= */
+.btn-submit {
+  background-color: var(--color-green-medium);
+  color: var(--color-white);
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: hsl(169, 82%, 15%); /* Un verde un poco más oscuro */
+}
+
+/* =========================================
+   7. MENSAJES DE ERROR Y ÉXITO
+   ========================================= */
+.error-text {
+  color: var(--color-red);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: none; /* Oculto por defecto */
+}
+
+/* Clase que activaremos con JS cuando haya error */
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--color-red);
+}
+
+.form-group.error .error-text {
+  display: block;
+}
+
+/* Mensaje Flotante de Éxito */
+.success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-grey-900);
+  color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  max-width: 400px;
+  width: 90%;
+}
+
+.success-message.hidden {
+  display: none;
+}
+
+.success-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.success-content p {
+  color: var(--color-green-lighter);
+  font-size: 0.9rem;
+}
+
+.autor {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-grey-500);
+}
+.autor a {
+  color: var(--color-green-medium);
+  text-decoration: none;
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN (Móvil)
+   ========================================= */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  /* Apilar nombre y apellido en columna */
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Apilar botones de radio en columna */
+  .radio-group {
+    flex-direction: column;
+  }
+
+  .radio-option {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   ESTILOS DE VALIDACIÓN (ERRORES)
+   ========================================= */
+
+/* 1. El texto de error (oculto por defecto) */
+.error-text {
+  display: none;
+  color: var(--color-red);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+/* 2. Cuando el contenedor tiene la clase 'error', mostramos el texto */
+.form-group.error .error-text {
+  display: block;
+}
+
+/* 3. Pintar el borde del Input/Textarea de rojo */
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--color-red) !important; /* !important para forzar el rojo sobre otros estilos */
+}
+
+/* 4. Pintar el borde de los Radio Buttons (Consulta) de rojo */
+.form-group.error .radio-option {
+  border-color: var(--color-red) !important;
+}
+
+/* 5. Pintar el texto del Checkbox de rojo si falla */
+.checkbox-group.error {
+  color: var(--color-red);
+}

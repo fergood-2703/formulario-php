@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Formulario de contacto</title>
+</head>
+
+<body>
+
+  <main>
+
+    <div id="success-message" class="success-message hidden">
+      <div class="success-content">
+        <div class="success-header">
+          <img src="./assets/images/icon-success-check.svg" alt="">
+          <span>¡Mensaje enviado!</span>
+        </div>
+        <p>Gracias por completar el formulario. ¡Nos pondremos en contacto pronto!</p>
+      </div>
+    </div>
+
+    <section class="contact-card">
+      <h1>Contáctanos</h1>
+
+      <form class="contact-form" action="php/enviar.php" method="POST" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre </label>
+            <input type="text" id="nombre" name="nombre" required>
+            <span class="error-text">Este campo es obligatorio</span>
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">Apellido </label>
+            <input type="text" id="apellido" name="apellido" required>
+            <span class="error-text">Este campo es obligatorio</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Dirección de correo electrónico </label>
+          <input type="email" id="email" name="email" required>
+          <span class="error-text">Por favor, introduce una dirección de correo electrónico válida</span>
+        </div>
+
+        <div class="form-group">
+          <label class="group-label">Tipo de consulta </label>
+          <div class="radio-group">
+
+            <div class="radio-option">
+              <input type="radio" id="general" name="tipo-consulta" value="general" required>
+              <label for="general">Consulta general</label>
+            </div>
+
+            <div class="radio-option">
+              <input type="radio" id="soporte" name="tipo-consulta" value="soporte">
+              <label for="soporte">Solicitud de soporte</label>
+            </div>
+
+          </div>
+          <span class="error-text">Por favor, selecciona un tipo de consulta</span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje </label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <span class="error-text">Este campo es obligatorio</span>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="consentimiento" name="consentimiento" required>
+            <label for="consentimiento">Autorizo para ser contactado por el equipo </label>
+          </div>
+          <span class="error-text">Para enviar este formulario, por favor consiente ser contactado</span>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="autor">
+    Formulario de contacto @2026. Desarrollado por <a
+      href="https://www.linkedin.com/in/fernando-puc-ek-061154226/">Fernando Puc Ek </a>.
+  </footer>
+
+  <script src="js/script.js"></script>
+  
+</body>
+
+</html>
